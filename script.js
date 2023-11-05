@@ -1,4 +1,4 @@
-const vedioCardContainer = document.querySelector('.vedio-container');
+const vedioCardContainer = document.querySelector('.video-container');
 
 let api_key = "AIzaSyAEwL1eIor7nqinmj8SME7BlN6wQbr56pY";
 let vedio_http = "https://www.googleapis.com/youtube/v3/videos?";
@@ -36,8 +36,11 @@ const getChannelIcon = (vedio_data) => {
 }
 
 const makeVedioCard = (data) => {
-    vedioCardContainer.innerHTML += `
-    <div class="vedio" onclick ="location.href = 'https://youtube.com/watch?v=${data.id}'">
+  let snip=data.snippet;
+  let videoId=data.id;
+  let div=document.createElement("div");
+  div.innerHTML += `
+    <div class="vedio">
          <img src="${data.snippet.thumbnails.high.url}" heigth = 300px width = 300px class="thumbnail" alt="channel thumbnail">
            <div class="content">
               <img src="${data.channelThumbnail}" class="channel-icon" alt="channel icon">
@@ -48,14 +51,31 @@ const makeVedioCard = (data) => {
                  </div>
                 </div>
                 `;
+               // const cv=document.querySelector(".vedio")
+               let obj={
+                snip,
+                videoId
+               }
+                  div.addEventListener("click",(e)=>{
+                    localStorage.setItem("video", JSON.stringify(obj))
+                    window.location.href="xcv.html"
+                        })
+                vedioCardContainer.append(div)
+               
             }
 
-  const searchInput = document.querySelector('.search-bar');
-  const searchBtn = document.querySelector('.search-btn');
-  let searchLink ="https://www.youtube.com/results?search_query=";    
-  
-  searchBtn.addEventListener('click' , () => {
-    if(searchInput.value.length){
-        location.href = searchLink + searchInput.value;
-    }
-  })
+            const searchInput = document.querySelector('.search-bar');
+            const searchBtn = document.querySelector('.search-btn');
+            let searchLink ="https://www.youtube.com/results?search_query=";    
+            
+            searchBtn.addEventListener('click' , () => {
+              if(searchInput.value.length){
+                  location.href = searchLink + searchInput.value;
+              }
+            })
+
+            const btn=document.querySelector(".toggle-btn");
+            const btn1=document.querySelector(".side-bar");
+            btn.addEventListener("click", (e)=>{
+              btn1
+            })

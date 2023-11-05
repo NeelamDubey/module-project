@@ -1,19 +1,5 @@
 # Youtube clone
 
-![Screenshot](preview.png)
-
-> Simple Youtube clone created with HTML, CSS & JS.
-
-> Live demo [https://jakubparlej.github.io/youtube-clone/](https://jakubparlej.github.io/youtube-clone/).
-
-## Table of Contents
-
-- [General info](#general-info)
-- [Technologies](#technologies)
-- [Setup](#setup)
-
-## General info
-
 This projects is created with HTML, CSS & JS. Main goal of this projects was to practice my CSS and JS skills.
 
 ## Technologies
